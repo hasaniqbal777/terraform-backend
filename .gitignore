@@ -1,0 +1,12 @@
+# MacOS
+.DS_Store
+
+# Terraform
+**/.terraform/*
+ignore.*.tfvars
+**/terraform/lambda_handlers/*
+
+# Project Specific
+tmp/
+TODO.txt
+DEVNOTES
