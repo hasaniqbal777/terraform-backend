@@ -10,3 +10,7 @@ ignore.*.tfvars
 tmp/
 TODO.txt
 DEVNOTES
+
+# Accounts
+**.backend.conf
+**.tfvars.json
