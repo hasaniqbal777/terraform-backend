@@ -20,8 +20,24 @@ Setting up a remote backend in AWS allows all Terraform state files to be centra
 ## Configuration Files
 
 You need to create two configuration files for each account:
-- `accounts/<account-name>.backend.conf`: Backend configuration file.
-- `accounts/<account-name>.tfvars.json`: Variable file containing settings specific to the AWS account.
+- `accounts/<account-name>.backend.conf`: Backend configuration file. Example:
+  ```conf
+  bucket         = "<aws_account_name>-terraform-state"
+  region         = "<aws_region>"
+  encrypt        = true
+  kms_key_id     = "<aws_kms_key_alias>"
+  dynamodb_table = "<aws_account_name>-terraform-lock"
+  profile        = "<aws_profile>"
+  ```
+- `accounts/<account-name>.tfvars.json`: Variable file containing settings specific to the AWS account. Example:
+  ```json
+  {
+    "aws_account_name": "<aws_account_name>",
+    "aws_account": "<aws_account_id>",
+    "aws_region": "<aws_region>",
+    "aws_profile": "<aws_profile>"
+  }
+  ```
 
 ## Deployment Steps
 
